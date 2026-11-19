@@ -1,0 +1,21 @@
+{
+  "name": "a-third-was-to-do",
+  "productName": "A Third Was To Do",
+  "version": "1.0.0",
+  "description": "A tiny menu bar calendar and to-do list for Mac.",
+  "main": "main.js",
+  "license": "MIT",
+  "scripts": {
+    "start": "electron .",
+    "dist": "electron-builder --mac --universal"
+  },
+  "dependencies": { "node-ical": "^0.20.1" },
+  "devDependencies": { "electron": "^33.2.0", "electron-builder": "^25.1.8" },
+  "build": {
+    "appId": "com.athirdwastodo.app",
+    "productName": "A Third Was To Do",
+    "files": ["main.js", "src/**", "assets/**", "node_modules/**", "package.json"],
+    "mac": { "category": "public.app-category.productivity", "icon": "assets/icon.png", "target": ["dmg", "zip"], "identity": null, "extendInfo": { "LSUIElement": true } },
+    "dmg": { "title": "A Third Was To Do" }
+  }
+}
